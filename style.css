@@ -1,0 +1,639 @@
+/* ===== RESET ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body {
+  background: #f5f5f5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blob 1 */
+body::before {
+  content: "";
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: #4ea8de; /* sebelumnya #00b4d8 */
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Blob 2 */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: #4361ee; /* sebelumnya #0077b6 */
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.3;
+  z-index: -1;
+}
+@keyframes moveBlob {
+  0% { transform: translate(0,0) scale(1); }
+  25% { transform: translate(80px, 50px) scale(1.1); }
+  50% { transform: translate(50px, 100px) scale(1); }
+  75% { transform: translate(-50px, 50px) scale(1.1); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+body::before,
+body::after {
+  animation: moveBlob 10s ease-in-out infinite;
+}
+
+
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* logo kiri, navbar kanan */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rainbowBG 15s ease infinite;
+  color: white;
+}
+
+/* Membuat judul Portofolio lebih dekat ke header */
+.about-content h1 {
+  font-size: 3rem;       /* ukuran besar */
+  text-align: center;    /* posisinya di tengah */
+  font-weight: 1000;      /* tebal */
+  margin-top: 0.5rem;    /* jarak dari atas lebih kecil, default biasanya lebih besar */
+  margin-bottom: 2rem;   /* jarak bawah tetap nyaman */
+  color: #0077b6;
+}
+
+/* Opsional: kurangi padding container section About */
+.about-container {
+  padding-top: 2rem; /* default bisa 4rem, diganti lebih kecil */
+  padding-bottom: 2rem;
+}
+
+@keyframes rainbowBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* LOGO (foto + nama kiri) */
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-name:hover { transform: scale(1.1); }
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+header h1 { font-size: 2rem; transition: transform 0.3s ease; }
+
+/* NAVBAR KANAN */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+}
+
+header nav a:hover { text-decoration: underline; }
+
+#toggleDark {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.skill-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.skill-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.skill-bar {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+.skill-bar div {
+  background: #0077b6;
+  height: 100%;
+  transition: width 1s ease;
+}
+
+/* ===== RESUME / PENGALAMAN ===== */
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.resume-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.resume-item h3 {
+  margin-bottom: 0.2rem;
+}
+.resume-item span {
+  font-size: 0.9rem;
+  color: #555;
+}
+.resume-item p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* CONTAINER RESUME */
+.resume-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* dari flex-start jadi center */
+  flex-wrap: wrap; /* agar responsif tetap jalan */
+}
+
+/* GAMBAR */
+.resume-img {
+  flex-shrink: 0;
+}
+.resume-img img {
+  width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+  animation: floatResume 3s ease-in-out infinite;
+}
+
+/* TEKS PENGALAMAN */
+.resume-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* TEKS */
+.resume-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .resume-item-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .resume-img img {
+    width: 150px;
+  }
+  .resume-text {
+    gap: 1rem;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 600px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== ABOUT ===== */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-animation {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.about-animation img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+/* Animasi naik turun halus */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsive untuk layar kecil */
+@media(max-width: 800px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
+
+@keyframes floatResume {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatOrg {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); } /* gerakan sedikit lebih kecil */
+}
+
+.organization-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* dari flex-start jadi center */
+  flex-wrap: wrap; /* agar responsif tetap jalan */
+}
+
+.org-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.org-card {
+  background-color: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.org-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.organization img {
+  max-width: 350px;
+  animation: floatOrg 4s ease-in-out infinite;
+  
+}
+
+.organization img:hover {
+  transform: scale(1.05);
+  
+}
+
+/* RESPONSIVE: layar kecil */
+@media(max-width: 768px) {
+  .organization-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .organization img {
+    max-width: 200px;
+    margin-top: 1.5rem;
+  }
+}
+
+/* ===== DARK MODE ===== */
+body.dark { background-color: #121212; color: #f5f5f5; }
+body.dark .project-card { background-color: #1e1e1e; box-shadow: 0 4px 6px rgba(0,0,0,0.6); }
+body.dark footer { background-color: #1a1a1a; }
+/* ===== DARK MODE TEXT ===== */
+body.dark .skill-card,
+body.dark .resume-item,
+body.dark .org-card,
+body.dark .school-item {
+  background-color: #1e1e1e; /* lebih gelap dari putih */
+  color: #f5f5f5; /* teks jadi terang */
+}
+
+body.dark .skill-card p,
+body.dark .resume-item p,
+body.dark .org-card p,
+body.dark .school-item p,
+body.dark .school-item span,
+body.dark .resume-item span {
+  color: #f5f5f5;
+}
+
+/* Optional: hover efek untuk gelap */
+body.dark .skill-card:hover,
+body.dark .resume-item:hover,
+body.dark .org-card:hover,
+body.dark .school-item:hover {
+  box-shadow: 0 12px 25px rgba(255,255,255,0.1);
+}
+
+/* ===== SECTIONS ===== */
+.container { max-width: 1000px; margin: auto; padding: 2rem; }
+
+section { padding: 4rem 0; opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+section.appear { opacity: 1; transform: translateY(0); }
+h2 { text-align: center; margin-bottom: 2rem; }
+
+/* ===== PROJECTS ===== */
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.project-card { background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 6px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.project-card h3 { margin-bottom: 1rem; }
+.project-card a { text-decoration: none; color: #0077b6; font-weight: bold; }
+
+.full-text {
+  display: none;
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+
+/* Container pendidikan */
+.school-info {
+  display: flex; /* atau gunakan grid jika mau lebih kompleks */
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Setiap item pendidikan */
+.school-item {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  flex: 1 1 300px; /* responsif minimal 300px */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.school-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Judul sekolah */
+.school-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #023e8a;
+}
+
+/* Tahun sekolah */
+.school-item span {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Deskripsi sekolah */
+.school-item p {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Responsif untuk layar kecil */
+@media(max-width: 768px) {
+  .school-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== CONTACT ===== */
+
+
+.contact-card a,
+.contact-card a:visited {
+  color: #4da6ff; /* warna biru seragam */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: #4da6ff; /* atau sesuai hover yang kamu mau */
+  text-decoration: underline;
+}
+
+body.dark .contact-card a,
+body.dark .contact-card a:visited {
+  color: #4da6ff;
+}
+
+body.dark .contact-card a:hover {
+  color: #80c1ff;
+}
+
+#contact {
+  background-color: #f0f4f8; /* latar sedikit berbeda untuk section kontak */
+  padding: 4rem 2rem;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0077b6;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 250px;
+  flex: 1 1 200px;
+}
+
+.contact-card span {
+  font-size: 2rem; /* ikon lebih besar */
+  color: #0077b6;
+  flex-shrink: 0;
+}
+
+.contact-card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-card a {
+  color: #0077b6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: #0077b6;
+  text-decoration: underline;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+  #contact {
+    padding: 2rem 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* ===== DARK MODE CONTACT ===== */
+body.dark #contact {
+  background-color: #1a1a1a; /* latar gelap */
+}
+
+body.dark #contact h2 {
+  color: #f5f5f5; /* judul terang */
+}
+
+body.dark .contact-card {
+  background-color: #2a2a2a; /* kartu gelap */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+body.dark .contact-card p {
+  color: #f5f5f5; /* teks putih agar terlihat */
+}
+
+body.dark .contact-card a {
+  color: #4da6ff; /* link terang agar terlihat */
+}
+
+body.dark .contact-card a:hover {
+  color: #80c1ff;
+}
+
+/* ===== FOOTER ===== */
+footer { text-align: center; padding: 2rem; background-color: #023e8a; color: white; margin-top: 2rem; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .profile-pic { width: 70px; height: 70px; }
+  header nav { gap: 0.5rem; }
+  header { flex-direction: column; gap: 1rem; }
+}
+
+/* ===== CONTAINER PERLEBAR ===== */
+.container {
+  max-width: 1400px; /* sebelumnya 1000px, sekarang lebih luas */
+  margin: auto;
+  padding: 2rem 3rem; /* padding kiri/kanan lebih lebar */
+}
+
+/* RESPONSIVE UNTUK LAYAR KECIL */
+@media(max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    padding: 2rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}

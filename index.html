@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Modern</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo-name">
+      <img src="images/fotoku.jpg" alt="Foto Saya" class="profile-pic">
+      <h1>Kariman Aqla</h1>
+    </div>
+    <nav>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Project</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#resume">Pengalaman Kerja</a>
+      <a href="#organization">Organisasi</a>
+      <a href="#school">Pendidikan</a>
+      <a href="#contact">Kontak</a>
+      <button id="toggleDark">🌙</button>
+    </nav>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="fade">
+    <div class="container about-container">
+      <div class="about-content">
+        <h1>Portofolio</h1>
+        <h2>Tentang Saya</h2>
+        <p>
+          Lulusan Sistem dan Teknologi Informasi dengan 2 tahun
+          pengalaman sebagai Operator Produksi (Final Assembling).
+          Berpengalaman dalam stok opname, pengelolaan bahan kemas,
+          penanganan Barang Rusak, dan validasi data sistem dengan
+          kondisi fisik barang. Terbiasa bekerja sesuai SOP, GMP, 5R/5S, dan
+          K3, siap kerja sistem shift. Menguasai Microsoft Excel (Vlookup,
+          Hlookup, Xlookup, Pivot Table, IF, SUMIF, Macro).
+        </p>
+      </div>
+      <div class="about-animation">
+        <img src="images/animasi.png" alt="Animasi Tentang Saya">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="fade">
+    <div class="container">
+      <h2>Project Saya</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="images/ayam.jpeg" alt="Project Pakan Ayam" class="project-img">
+          <h3>Sistem Pengontrol Pakan Ayam Aduan Menggunakan Sensor HX711 Di Arduino Uno Berbasis IoT</h3>
+          <p class="full-text">
+            Sistem ini menggunakan sensor berat HX711 untuk mengukur jumlah pakan secara real-time 
+            dan dikontrol oleh Arduino Uno. Data dikirim melalui teknologi IoT sehingga pengguna dapat memantau 
+            dan mengontrol pemberian pakan dari jarak jauh. Fitur utama meliputi pengontrolan jumlah pakan melalui 
+            aplikasi android dan sistem akan mendapatkan sinyal lalu menjalankan alat dan akan berhenti ketika sensor 
+            HX711 membaca berat sesuai dengan data yang dikirim dari aplikasi android. Proyek ini membantu meningkatkan 
+            efisiensi peternakan dan mengurangi pakan yang berlebih.</p>
+
+          <button class="btn-toggle" onclick="toggleText(this)">Lihat Selengkapnya</button>
+        </div>
+        <div class="project-card">
+          <img src="images/pdam.jpeg" alt="Project pdam" class="project-img">
+          <h3>Rancang Bangun Aplikasi Mobile Geo Tagging Untuk Pelaporan Masalah Layanan PDAM Menggunakan Metodelogi
+            Prototyping (Study Kasus Kunjorowesi)
+          </h3>
+          <p class="full-text">Aplikasi Mobile Geo Tagging untuk Pelaporan Masalah Layanan PDAM adalah sistem berbasis mobile 
+            yang dikembangkan untuk meningkatkan efektivitas pelaporan gangguan layanan air oleh masyarakat. Aplikasi ini 
+            memanfaatkan teknologi GPS untuk menentukan lokasi secara otomatis (geo tagging), serta menyediakan fitur unggah 
+            foto dan deskripsi masalah secara real-time. Data laporan dikirim ke server dan dapat dipantau oleh admin melalui 
+            sistem backend. Pengembangan aplikasi menggunakan metodologi prototyping, yang memungkinkan proses iterasi berdasarkan
+             umpan balik pengguna sehingga menghasilkan sistem yang lebih sesuai kebutuhan. Hasil dari proyek ini menunjukkan 
+             peningkatan kecepatan pelaporan, akurasi lokasi, serta kemudahan monitoring bagi pihak pengelola layanan.</p>
+             
+          <button class="btn-toggle" onclick="toggleText(this)">Lihat Selengkapnya</button>
+        </div>
+        <div class="project-card">
+          <img src="images/daun.jpeg" alt="Project daun" class="project-img">
+          <h3>KLASIFIKASI KUALITAS DAUN SEHAT DAN TIDAK SEHAT PADA TANAMAN JAGUNG
+            DENGAN MENGGUNAKAN METODE MORFOLOGI GRADIEN DI PYTHON</h3>
+          <p class="full-text">Proyek ini mengembangkan sistem klasifikasi citra untuk mendeteksi kualitas daun jagung menggunakan 
+            metode morfologi gradien berbasis Python. Proses dimulai dengan pengolahan citra (preprocessing) seperti grayscale dan 
+            filtering, kemudian dilanjutkan dengan ekstraksi fitur menggunakan teknik morfologi gradien untuk menonjolkan perbedaan 
+            struktur tepi antara daun sehat dan tidak sehat. Hasil analisis digunakan untuk mengklasifikasikan kondisi daun secara 
+            otomatis. Sistem ini dapat membantu petani dalam melakukan deteksi dini terhadap penyakit tanaman sehingga meningkatkan 
+            efisiensi pemantauan dan potensi hasil panen.</p>
+          <button class="btn-toggle" onclick="toggleText(this)">Lihat Selengkapnya</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="fade">
+    <div class="container">
+      <h2>Keahlian Saya</h2>
+      <div class="skills">
+        <div class="skill-card">
+          <h3>HTML & CSS</h3>
+          <div class="skill-bar"><div style="width: 70%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <h3>JavaScript & C++</h3>
+          <div class="skill-bar"><div style="width: 65%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <h3>PHP & CodeIgniter</h3>
+          <div class="skill-bar"><div style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <h3>Microsoft Excel</h3>
+          <div class="skill-bar"><div style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <h3>Perakitan Elektronik</h3>
+          <div class="skill-bar"><div style="width: 80%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME / PENGALAMAN ===== -->
+  <section id="resume" class="fade">
+    <div class="container">
+      <h2>Pengalaman Kerja</h2>
+      <div class="resume-container">
+        <!-- GAMBAR TUNGGAL -->
+        <div class="resume-img">
+          <img src="images/service-2.png" alt="Pengalaman Saya">
+        </div>
+        <!-- TEKS PENGALAMAN -->
+        <div class="resume-text">
+          <div class="resume-item">
+            <h4>Magang Helper Mekanik</h4>
+            <span>2017 | AUTO 2000 Pasuruan</span>
+            <p>
+              Menyiapkan alat kerja, suku cadang, dan perlengkapan servis sebelum dan sesudah pekerjaan.<br>
+              Membantu proses servis berkala (ganti oli, pengecekan filter, aki, rem, dan cairan kendaraan).<br>
+              Melakukan pemeriksaan visual kendaraan dan melaporkan temuan awal kepada mekanik.<br>
+              Membantu proses bongkar–pasang komponen ringan di bawah supervisi mekanik senior</p>
+          </div>
+          <div class="resume-item">
+            <h4>Operator Produksi (Final Assembling)</h4>
+            <span>2019-2021 | PT. YAMAHA ELECTRONICS MANUFACTURING INDONESIA</span>
+            <p>
+              Melakukan perakitan akhir produk sesuai standar kerja dan kualitas.<br>
+              Memastikan kelengkapan komponen serta melakukan pengecekan visual produk.<br>
+              Mengemas produk dengan rapi dan aman untuk distribusi.<br>
+              Mencatat hasil produksi harian dan menjaga peralatan kerja.<br>
+              Berkoordinasi dengan tim produksi dan Quality Control untuk mencapai target produksi.
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Freelance IT & Academic Support</h4>
+            <span>2024 – Sekarang</span>
+            <p>
+              Mengembangkan aplikasi website dan Android sesuai kebutuhan klien.<br>
+              Membuat laporan skripsi, proposal, dan jurnal dengan format akademik sesuai standar.<br>
+              Mengelola data dan membuat laporan menggunakan Microsoft Excel (VLOOKUP, HLOOKUP, XLOOKUP, Pivot Table, Macro).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- ===== ORGANIZATION ===== -->
+<section id="organization" class="fade">
+  <div class="container">
+    <h2>Pengalaman Organisasi</h2>
+
+    <div class="organization-container">
+      <!-- Kartu Organisasi -->
+      <div class="org-cards">
+        <div class="org-card">
+          <h3>Mahasiswa Tanggap Bencana</h3>
+          <p><strong>Wakil Ketua Divisi Acara (2022-2023)</strong></p>
+          <p>Mendampingi ketua dalam merencanakan program kerja terkait penanggulangan dan kesiapsiagaan bencana.<br>
+              Mengambil alih kepemimpinan apabila ketua berhalangan hadir dalam rapat atau kegiatan lapangan.<br>
+              Memonitor kesiapan anggota tim, termasuk logistik, peralatan, dan personel dalam setiap kegiatan respons bencana.<br>
+              Membantu evaluasi kegiatan dan membuat laporan untuk disampaikan ke pembina organisasi atau institusi kampus</p>
+        </div>
+
+        <div class="org-card">
+          <h3>Takmir Masjid Al-Huda</h3>
+          <p><strong>Bendahara 2021-2022</strong></p>
+          <p>Mencatat semua pemasukan (infak, sedekah, donasi, zakat) secara rinci dan teratur.<br>
+              Mengelola serta mencatat setiap pengeluaran untuk kebutuhan operasional dan kegiatan masjid.<br>
+              Menyusun laporan keuangan secara berkala (mingguan/bulanan).<br>
+              Menyimpan dan mengarsipkan bukti transaksi seperti nota dan kwitansi.<br>
+              Menjaga keamanan dan penyimpanan dana kas masjid.<br>
+              Mengatur anggaran untuk kegiatan dan kebutuhan masjid.<br>
+              Berkoordinasi dengan ketua dan pengurus lain terkait penggunaan dana.<br>
+              Menyampaikan laporan keuangan kepada jamaah secara transparan.<br>
+              Memastikan keuangan dikelola dengan jujur, amanah, dan bertanggung jawab</p>
+        </div>
+      </div>
+
+      <!-- Gambar Organisasi -->
+      <div class="organization">
+        <img src="images/service-1.png" alt="Pengalaman Organisasi">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--- ===== PENDIDIKAN ===== --->
+<section id="school" class="fade">
+  <div class="container">
+    <h2>Pendidikan Dan Pelatihan</h2>
+    <div class="school-info">
+      <div class="school-item">
+        <h4>SMK UNTUNG SURAPATI PASURUAN</h4>
+        <span>2015 - 2018</span>
+        <p>Jurusan Teknik Kendaraan Ringan. Aktif Dalam Ektrakulikuler Menyetir Mobil.</p>
+      </div>
+      <div class="school-item">
+        <h4>INSTITUT TEKNOLOGI DAN BISNIS YADIKA PASURUAN</h4>
+        <span>2021 - 2025</span>
+        <p>Fakultas Teknologi Informasi, Sistem Dan Teknologi Informasi. Mengikuti organisasi kemahasiswaan dan Kegiatan Relawan.</p>
+      </div>
+      <div class="school-item">
+        <h4>BALAI DIKLAT INDUSTRI SURABAYA</h4>
+        <span>2 Minggu</span>
+        <p>Pelatihan dan Pendidikan Three-In-One Elekronika. Aktif Dalam Mengikuti Pelatihan Tentang Elektonik.</p>
+      </div>
+      <div class="school-item">
+        <h4>FUNDAMENTAL COURSE</h4>
+        <span>2 Minggu</span>
+        <p>Intro To Software Engineering. Aktif Dalam Mengikuti Pembelajaran Bahasa Pemograman Yang Diberikan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="fade">
+    <div class="container">
+      <h2>Kontak Saya</h2>
+      <div class="contact-info">
+        <p>📧 Email: <a href="mailto:karimanaqla@gmail.com">karimanaqla@gmail.com</a></p>
+        <p>📞 Telepon/WA: <a href="https://wa.me/6283831960616" target="_blank">+62 838-3196-0616</a></p>
+        <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/kariman-aqla-7191a9375" target="_blank">linkedin.com/in/kariman-aqla</a></p>
+        <p>🌐 Website: <a href="https://www.portofolioku.com" target="_blank">www.portofolioku.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2026 Kariman Aqla. Semua hak dilindungi.
+  </footer>
+
+</body>
+<script>
+  // Toggle Dark Mode
+  const toggle = document.getElementById('toggleDark');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+
+  // Fade in on scroll
+  const faders = document.querySelectorAll('.fade');
+  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // ✅ INI YANG KAMU KURANG
+  function toggleText(button) {
+    const card = button.parentElement;
+    const fullText = card.querySelector('.full-text');
+
+    if (fullText.style.display === "block") {
+      fullText.style.display = "none";
+      button.innerText = "Lihat Selengkapnya";
+    } else {
+      fullText.style.display = "block";
+      button.innerText = "Sembunyikan";
+    }
+  }
+</script>
+</html>
